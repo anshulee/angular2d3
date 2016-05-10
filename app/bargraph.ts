@@ -32,7 +32,7 @@ length:number;
       style({
         'width':  width  + 'px',
         'height': height + 'px',
-      }).
+      }).on("click",this.click).
       selectAll('div');
   }
   
@@ -49,6 +49,11 @@ length:number;
 
   }
   
+  click()
+  {
+    alert("div clicked. Data is "+this.bardata);
+    
+  }
   //Following code to be uncommented when we are trying to observe changes. Then we might not render onint.
 /*ngDoCheck()
 {
