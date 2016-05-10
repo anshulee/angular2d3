@@ -32,7 +32,7 @@ length:number;
       style({
         'width':  width  + 'px',
         'height': height + 'px',
-      }).on("click",this.click).
+      }).on('click', (ev) => this.click(ev)).
       selectAll('div');
   }
   
@@ -49,9 +49,9 @@ length:number;
 
   }
   
-  click()
+  click(data)
   {
-    alert("div clicked. Data is "+this.bardata);
+    alert("div clicked");
     
   }
   //Following code to be uncommented when we are trying to observe changes. Then we might not render onint.
