@@ -32,11 +32,12 @@ length:number;
       style({
         'width':  width  + 'px',
         'height': height + 'px',
-      }).
+      }).on('click', (ev) => this.click(ev)).
       selectAll('div');
   }
+  
    ngOnInit(){
-   
+   this.render(this.bardata);
    }
 
   render(newValue) {
@@ -47,7 +48,14 @@ length:number;
       .text(d => d + '%');
 
   }
-ngDoCheck()
+  
+  click(data)
+  {
+    alert("div clicked");
+    
+  }
+  //Following code to be uncommented when we are trying to observe changes. Then we might not render onint.
+/*ngDoCheck()
 {
  // alert("check called");
  
@@ -56,6 +64,7 @@ ngDoCheck()
   this.render(this.bardata);
   }
 }
+
 ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
   
   for (let propName in changes) {
@@ -64,8 +73,9 @@ ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
     let prev = JSON.stringify(prop.previousValue);
   //  alert(prev+","+cur);
    let num :Array<number>= prop.currentValue;
-//this.render(num);
+this.render(num);
 
 
     
-}}}
+}}*/
+}
