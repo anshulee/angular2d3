@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import{BarGraph} from './bargraph';
+import { Component, OnInit } from "@angular/core";
+import {BarGraphComponent} from "./bargraph.Component";
 
 @Component({
-  selector: 'my-app',
-  directives: [BarGraph],
+  selector: "sg-app",
+  directives: [BarGraphComponent],
   template: `<h1>Angular 2 d3 App Integration</h1>
   <div>
-   <bar-graph
+   <sg-bar-graph
    [bardata]="graphData"
     width="1000"
-    height="130"
-  >
-  </bar-graph>
+    height="130">
+  </sg-bar-graph>
   </div>`
 })
-export class AppComponent implements OnInit
-{
-    graphData:Array<number>;
-      ngOnInit()
-      {
-                this.graphData = [10,27,34,45,67]
-      }
-    
+
+export class AppComponent implements OnInit {
+  graphData: Array<number>;
+
+  ngOnInit() {
+    this.graphData = [10, 27, 34, 45, 67];
+  }
 }
